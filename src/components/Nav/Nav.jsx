@@ -7,7 +7,7 @@ const Nav = () => {
 
     const Links = <>
         <li><NavLink to={'/'}>Home</NavLink> </li>
-        <li><NavLink to={'/about'}>About</NavLink></li>
+        <li><NavLink to={'/listedBooks'}>Listed Books</NavLink></li>
         <li><NavLink to={'/blog'}>Blog</NavLink></li>
     </>;
     return (
