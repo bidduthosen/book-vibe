@@ -17,7 +17,7 @@ const BookDetails = () => {
     }
 
 
-    const {bookId: currentBookId, image, bookName, author, review, rating, tags } = book;
+    const {bookId: currentBookId, image, bookName, review, rating, totalPages } = book;
     return (
         <div className='bg-gray-300 w-10/12 mx-auto p-7 rounded-xl'>
             <div className='p-6 rounded-xl'>
@@ -27,6 +27,8 @@ const BookDetails = () => {
                 <h1 className='font-bold text-2xl '> BookId: {currentBookId}</h1>
                 <h1 className='font-bold text-2xl '>{bookName}</h1>
                 <p className='text-gray-500'>{review}</p>
+                <p className='text-gray-500'>Rattings: {rating}</p>
+                <p className='text-gray-500'>Total page: {totalPages}</p>
                 <div className='space-x-4 flex justify-end'>
                     <button onClick={() => handleReadCart(bookId)} className='btn btn-outline btn-secondary'>Read</button>
                     <button onClick={()=> handleWishListCart(bookId)} className='btn btn-outline btn-secondary'>wishlist</button>
