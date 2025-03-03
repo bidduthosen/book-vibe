@@ -2,14 +2,25 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const BookDetails = () => {
-    const {bookId} = useParams()
+    const { bookId } = useParams()
     const id = parseInt(bookId)
     const datas = useLoaderData();
     const book = datas.find(data => data.bookId === id);
-    const { image, bookName, author, category, rating,tags } = book;
+    const {bookId: currentBookId, image, bookName, author, review, rating, tags } = book;
     return (
-        <div>
-            <h1>{bookName}</h1>
+        <div className='bg-gray-300 w-10/12 mx-auto p-7 rounded-xl'>
+            <div className='p-6 rounded-xl'>
+                <img className='h-64' src={image} alt="" />
+            </div>
+            <div className='space-y-4'>
+                <h1 className='font-bold text-2xl '> BookId: {currentBookId}</h1>
+                <h1 className='font-bold text-2xl '>{bookName}</h1>
+                <p className='text-gray-500'>{review}</p>
+                <div className='space-x-4 flex justify-end'>
+                    <button className='btn btn-outline btn-secondary'>Read</button>
+                    <button className='btn btn-outline btn-secondary'>wishlist</button>
+                </div>
+            </div>
         </div>
     );
 };
