@@ -1,8 +1,7 @@
 import React from 'react';
 
 const Wishlist = ({wishList}) => {
-    console.log(wishList)
-    const {bookId: currentBookId, image, bookName, author, review, rating, tags } = wishList;
+    const {bookId: currentBookId, image, bookName, author, review, rating, totalPages } = wishList;
     return (
         <div className='bg-gray-300 border-2 border-gray-400 rounded-xl grid grid-cols-8 gap-4 p-4 md:p-14' >
             <div className='p-6 rounded-xl md:col-span-3'>
@@ -12,6 +11,8 @@ const Wishlist = ({wishList}) => {
                 <h1 className='font-bold text-2xl '> BookId: {currentBookId}</h1>
                 <h1 className='font-bold text-2xl '>{bookName}</h1>
                 <p className='text-gray-500'>{review}</p>
+                <p className='text-gray-500'>Rattings: {rating}</p>
+                <p className='text-gray-500'>Total page: {totalPages}</p>
             </div>
         </div>
     );
